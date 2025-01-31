@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body,select {
+      display: flex;
+      justify-content: center;
+      font-family: Lora,Georgia,Times,serif;
+    }
+    .fields {
+      width: 90%;
+    }
+    .street,.ort {
+      width: 63%;
+    }
+    .field-select {
+      width: 40%;
+      border-radius: 5px;
+    }
+    input{
+        border-radius: 5px;
+    }
+    .button{
+        cursor: pointer;
+        padding: 12px;
+        background-color: #006440;
+        color: white;
+    }
+    .button:hover{
+        background-color: green;
+    }
+  </style>
+  <body>
+    <form method="get" action="index.html" id="donation-form">
+      <div 
+        <div class="fieldset">
+          <h4>Ihr Beitrag</h4>
+          <div class="data" id="allData">
+            <div>
+              <label for="anrede">Anrede * </label><br />
+              <input
+                type="hidden"
+              />
+              <select
+                class="field-select"
+              >
+                <option value="0">Bitte Anrede wählen ...</option>
+                <option value="1">Herr</option>
+                <option value="2">Frau</option>
+                <option value="3">divers</option>
+              </select>
+            </div>
+            <div>
+              <label for="title">akad. Titel (ggf.)</label><br />
+              <input
+                
+                class="fields"
+                type="text"
+                name="academicTitle"
+                style="
+                  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=');
+                  background-attachment: scroll;
+                  background-size: 16px 18px;
+                  cursor: auto;
+                  background-position: 98% 50%;
+                  background-repeat: no-repeat no-repeat;
+                "
+              />
+            </div>
+            <div>
+              <label for="namenszusatz">Namenszusätze (ggf.)</label><br />
+              <input
+                
+                class="fields"
+                type="text"
+              />
+            </div>
+            <div>
+              <label for="vorname">Vorname * </label><br />
+              <input
+                
+                class="fields"
+                type="text"
+                name="firstName"
+                required="required"
+              />
+            </div>
+            <div>
+              <label for="nachname">Nachname * </label><br />
+              <input
+                
+                class="fields"
+                type="text"
+                name="lastName"
+                required="required"
+              />
+            </div>
+            <div>
+              <label for="spende">Höhe der Spende *</label><br />
+              <input
+                
+                class="fields"
+                type="text"
+                name="donation"
+              />
+            </div>
+            <div>
+              <label for="date">Datum</label><br />
+              <input
+                
+                class="fields"
+                type="text"
+                name="date"
+              />
+            </div>
+            <div>
+              <label for="projekt">Projektauswahl</label><br />
+              <select
+                name="select2"
+                class="field-select"
+                required="required"
+                
+              >
+                <option value="">Bitte Projekt auswählen</option>
+                <option value="Bolivien, El Alto  - Fundacíon Wiphala">
+                  Bolivien, El Alto - Fundacíon Wiphala
+                </option>
+                <option
+                  value="Chile - Temuco - Frauenkooperative Mujeres Mapuche Temuco"
+                >
+                  Chile - Temuco - Frauenkooperative Mujeres Mapuche Temuco
+                </option>
+                <option value="Indien, Rajasthan - Magic Bus">
+                  Indien, Rajasthan - Magic Bus
+                </option>
+                <option value="Israel/Palästina - Frauenfußball Diyar">
+                  Israel/Palästina - Frauenfußball Diyar
+                </option>
+                <option
+                  value="Israel/Palästina - Internationales Begegnungszentrum und College"
+                >
+                  Israel/Palästina - Internationales Begegnungszentrum und
+                  College
+                </option>
+                <option value="Italien / Neapel - Jugendkooperative Sanità">
+                  Italien / Neapel - Jugendkooperative Sanità
+                </option>
+                <option
+                  value="Kambodscha - HVTO Sophy Village Free Education Program"
+                >
+                  Kambodscha - HVTO Sophy Village Free Education Program
+                </option>
+                <option
+                  value="Kuba - Camagüey, Förderung von Jugendlichen und Kindern"
+                >
+                  Kuba - Camagüey, Förderung von Jugendlichen und Kindern
+                </option>
+                <option
+                  value="Madagaskar - Solar-und energieeffiziente Kocher "
+                >
+                  Madagaskar - Solar-und energieeffiziente Kocher
+                </option>
+                <option value="Madagaskar - Solarzentrum - Solarzentrum">
+                  Madagaskar - Solarzentrum - Solarzentrum
+                </option>
+                <option value="Marokko Ait Amar - Schule Ait Amar">
+                  Marokko Ait Amar - Schule Ait Amar
+                </option>
+                <option
+                  value="Myanmar - Mandalay -  Phaung Daw Oo Klosterschule"
+                >
+                  Myanmar - Mandalay - Phaung Daw Oo Klosterschule
+                </option>
+                <option
+                  value="Myanmar - Nähe Mandalay - Marfels - Fortbildungs- und Gartenprojekt der Phaung Daw Oo Klosterschule"
+                >
+                  Myanmar - Nähe Mandalay - Marfels - Fortbildungs- und
+                  Gartenprojekt der Phaung Daw Oo Klosterschule
+                </option>
+                <option
+                  selected="selected"
+                  value="Nepal - Kathmandu, Schulspeisung "
+                >
+                  Nepal - Kathmandu, Schulspeisung
+                </option>
+                <option value="Nicaragua - Töpferschule">
+                  Nicaragua - Töpferschule
+                </option>
+                <option value="Peru  - Förderung für Schulkinder">
+                  Peru - Förderung für Schulkinder
+                </option>
+                <option value="Peru Lamay - Asociación Pro Salud Wiñay">
+                  Peru Lamay - Asociación Pro Salud Wiñay
+                </option>
+                <option value="Peru Trujillo - Trujillo - Musikunterricht">
+                  Peru Trujillo - Trujillo - Musikunterricht
+                </option>
+                <option
+                  value="Sri Lanka - Unterstützung für eine Schule in Ahungalla"
+                >
+                  Sri Lanka - Unterstützung für eine Schule in Ahungalla
+                </option>
+                <option value="Südafrika Kliptown - Kliptown Youth Project">
+                  Südafrika Kliptown - Kliptown Youth Project
+                </option>
+                <option value="Südafrika Pongola -  Sakhumuzi-Primary-School">
+                  Südafrika Pongola - Sakhumuzi-Primary-School
+                </option>
+                <option value="Tansania - Irente Childrens Home">
+                  Tansania - Irente Childrens Home
+                </option>
+                <option value="Tansania, Karatu - Rhotia Health Center">
+                  Tansania, Karatu - Rhotia Health Center
+                </option>
+                <option value="Türkei, Mardin - Frauenhilfsprojekt KAMER">
+                  Türkei, Mardin - Frauenhilfsprojekt KAMER
+                </option>
+                <option value="Vietnam/Saigon - Waisenhaus Dieu Giac Love">
+                  Vietnam/Saigon - Waisenhaus Dieu Giac Love
+                </option>
+                <option value="Ägypten, Insel Bigeh - Öko Dorf Bigeh">
+                  Ägypten, Insel Bigeh - Öko Dorf Bigeh
+                </option>
+                <option
+                  value="Äthiopien Gondar - Gondar - Kindu Trust  Ethiopia"
+                >
+                  Äthiopien Gondar - Gondar - Kindu Trust Ethiopia
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="fieldset">
+          <h4>Versandadresse für die Spendenbescheinigung</h4>
+          <div class="data">
+            <div>
+              <label>c/o</label><br />
+              <input
+                class="fields"
+                type="text"
+                name="careOf"
+              />
+            </div>
+            <div>
+              <label>Strasse *, Nr *</label><br />
+              <input
+                class="street"
+                type="text"
+                name="street"
+              />
+              <input
+                class="number"
+                type="text"
+                name="number"
+                required="required"
+              />
+            </div>
+            <div>
+              <label>PLZ *, Ort *</label><br />
+              <input
+                class="plz"
+                type="text"
+                name="postalCode"
+              />
+              <input
+                class="ort"
+                type="text"
+                name="place"
+                required="required"
+              />
+            </div>
+            <div>
+              <label>Land *</label><br />
+              <input
+                class="fields"
+                type="text"
+                name="country"
+                required="required"
+              />
+            </div>
+            <div>
+              <label>Vorwahl, Telefon</label><br />
+              <input
+                class="fields"
+                type="text"
+                name="phoneNumber"
+              />
+            </div>
+            <div>
+              <label>Email *</label><br />
+              <input
+                class="fields"
+                type="email"
+                size="20"
+                name="email"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <input class="button"
+          type="submit"
+          name="ActionCollectInformation"
+          value="Absenden"
+        />
+      </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+  </head>
+  <style>
+    body {
+      font-family: Lora, Georgia, Times, serif;
+      margin: 50px;
+    }
+  </style>
+  <body>
+    <h1>Results</h1>
+    <div id="results"></div>
+    <script>
+      function displayResults() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const email = urlParams.get("email");
+        const donation = urlParams.get("donation");
+        const academicTitle = urlParams.get("academicTitle");
+        const otherName = urlParams.get("otherName");
+        const firstName = urlParams.get("firstName");
+        const lastName = urlParams.get("lastName");
+        const date = urlParams.get("date");
+        const careOf = urlParams.get("careOf");
+        const street = urlParams.get("street");
+        const number = urlParams.get("number");
+        const postalCode = urlParams.get("postalCode");
+        const place = urlParams.get("place");
+        const country = urlParams.get("country");
+        const phoneNumber = urlParams.get("phoneNumber");
+        const select2 = urlParams.get("select2");
+        const salutation = urlParams.get("salutation");
+
+        let resultText = "";
+        if (firstName) resultText += `<p>Vorname: ${firstName}</p>`;
+        if (lastName) resultText += `<p>Nachname: ${lastName}</p>`;
+        if (email) resultText += `<p>Email: ${email}</p>`;
+        if (donation) resultText += `<p>Höhe der Spende: ${donation}</p>`;
+        if (academicTitle) resultText += `<p>akad. Titel: ${academicTitle}</p>`;
+        if (otherName) resultText += `<p>Namenzusätze: ${otherName}</p>`;
+        if (date) resultText += `<p>Datum: ${date}</p>`;
+        if (careOf) resultText += `<p>c/o: ${careOf}</p>`;
+        if (street) resultText += `<p>Strasse: ${street}</p>`;
+        if (number) resultText += `<p>Nr: ${number}</p>`;
+        if (postalCode) resultText += `<p>PLZ: ${postalCode}</p>`;
+        if (place) resultText += `<p>Ort: ${place}</p>`;
+        if (country) resultText += `<p>Land: ${country}</p>`;
+        if (phoneNumber)
+          resultText += `<p>Vorwahl, Telefon: ${phoneNumber}</p>`;
+        if (salutation) resultText += `<p>Anrede: ${salutation}</p>`;
+        if (select2) resultText += `<p>Projektauswahl: ${select2}</p>`;
+
+        document.getElementById("results").innerHTML = resultText;
+      }
+      displayResults();
+    </script>
+  </body>
+</html>
