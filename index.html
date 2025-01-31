@@ -36,13 +36,14 @@
         const salutation = urlParams.get("salutation");
 
         let resultText = "";
-        if (firstName) resultText += `<p>Vorname: ${firstName}</p>`;
-        if (lastName) resultText += `<p>Nachname: ${lastName}</p>`;
-        if (email) resultText += `<p>Email: ${email}</p>`;
-        if (donation) resultText += `<p>Höhe der Spende: ${donation}</p>`;
+        if (salutation) resultText += `<p>Anrede: ${salutation}</p>`;
         if (academicTitle) resultText += `<p>akad. Titel: ${academicTitle}</p>`;
         if (otherName) resultText += `<p>Namenzusätze: ${otherName}</p>`;
+        if (firstName) resultText += `<p>Vorname: ${firstName}</p>`;
+        if (lastName) resultText += `<p>Nachname: ${lastName}</p>`;
+        if (donation) resultText += `<p>Höhe der Spende: ${donation}</p>`;
         if (date) resultText += `<p>Datum: ${date}</p>`;
+        if (select2) resultText += `<p>Projektauswahl: ${select2}</p>`;
         if (careOf) resultText += `<p>c/o: ${careOf}</p>`;
         if (street) resultText += `<p>Strasse: ${street}</p>`;
         if (number) resultText += `<p>Nr: ${number}</p>`;
@@ -51,8 +52,7 @@
         if (country) resultText += `<p>Land: ${country}</p>`;
         if (phoneNumber)
           resultText += `<p>Vorwahl, Telefon: ${phoneNumber}</p>`;
-        if (salutation) resultText += `<p>Anrede: ${salutation}</p>`;
-        if (select2) resultText += `<p>Projektauswahl: ${select2}</p>`;
+        if (email) resultText += `<p>Email: ${email}</p>`;
 
         document.getElementById("results").innerHTML = resultText;
       }
